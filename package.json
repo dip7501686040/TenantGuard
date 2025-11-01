@@ -1,0 +1,21 @@
+{
+  "name": "tenantguard",
+  "version": "1.0.0",
+  "description": "Multi-tenant IAM system - Development workspace",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "cd backend && npm run start:dev",
+    "start:frontend": "cd frontend && npm start",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "build:all": "cd backend && npm run build && cd ../frontend && npm run build",
+    "test:all": "concurrently \"npm run test:backend\" \"npm run test:frontend\"",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test -- --watchAll=false"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "author": "TenantGuard Team",
+  "license": "MIT"
+}
