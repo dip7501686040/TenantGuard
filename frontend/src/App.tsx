@@ -44,6 +44,7 @@ const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 function AppRoutes() {
   return (
     <Routes>
+      {/* step 2 */}
       <Route
         path="/auth"
         element={
@@ -52,6 +53,7 @@ function AppRoutes() {
           </PublicRoute>
         }
       />
+      {/* step 3 */}
       <Route
         path="/dashboard"
         element={
@@ -60,6 +62,7 @@ function AppRoutes() {
           </ProtectedRoute>
         }
       />
+      {/* step 1 */}
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
     </Routes>
   )
