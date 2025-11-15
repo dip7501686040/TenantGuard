@@ -1,0 +1,21 @@
+{
+  "name": "tenantguard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:frontend": "cd frontend && pnpm start",
+    "start:backend": "cd backend && pnpm start",
+    "start:all": "concurrently \"pnpm --filter backend run start:debug\" \"pnpm --filter frontend run dev\" --names backend,frontend --prefix name",
+    "install:backend": "cd backend && pnpm install",
+    "install:frontend": "cd frontend && pnpm install",
+    "install:all": "sh -c 'pnpm install && cd backend && pnpm install && cd ../frontend && pnpm install'"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
